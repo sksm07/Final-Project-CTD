@@ -31,7 +31,7 @@ const Image = styled.img`
     object-fit: cover;
     border-radius: 10px;
 `
-const Title = styled.h3`
+const Title = styled.h4`
   margin-top: 10px;
   font-size: 1.1rem;
   color: #333;
@@ -43,7 +43,7 @@ export default function FlowerCard({flower, onSelect}) {
             <ImageWrapper>
               <img src={flower.image} alt={flower.name} />
             </ImageWrapper>
-            <Title><h3>{flower.name}</h3></Title>  
+            <Title>{flower.name}</Title>  
         </Card>
     )
 }

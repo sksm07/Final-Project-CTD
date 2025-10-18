@@ -12,8 +12,8 @@ export default function Header() {
             setTitle("Home")
         }else if(location.pathname === "/about"){
             setTitle("About")
-        }else if(location.pathname === "/favorite"){
-            setTitle("Favorite")
+        }else if(location.pathname === "/feedback"){
+            setTitle("Feedback")
         }else{ setTitle("Not Found")}
 
     }, [location])
@@ -21,11 +21,11 @@ export default function Header() {
     return (
         <div>
           <header>
-            <h1>{title}</h1>
+            <h2>{title}</h2>
             <nav>
                 <NavLink to="/">Home</NavLink>
                 <NavLink to="/about">About</NavLink>
-                <NavLink to="/favorite">Favorite</NavLink>
+                <NavLink to="/feedback">Feedback</NavLink>
             </nav>
           </header>  
         </div>

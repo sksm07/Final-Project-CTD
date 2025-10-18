@@ -5,16 +5,9 @@ import FlowerCard from '../features/FlowerCard.jsx';
 import Overlay from "../shared/Overlay.jsx";
 import FlowerDetail from "../features/FlowerDetail.jsx";
 
-export default function FlowerListPage(){
-
-    const [flowers, setFlowers] = useState([]);
-    const [isLoading, setIsLoading] = useState(false);
-    const [errorMessage, setErrorMessage] = useState("");
-    const [selectedFlower, setSelectedFlower] = useState(null);
-
-    const FlowerGrid = styled.div`
+const FlowerGrid = styled.div`
         display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
         gap: 1rem;
         transition: opacity 0.3s ease;
         &.dimmed {
@@ -26,6 +19,14 @@ export default function FlowerListPage(){
     const Container = styled.div`
         position: relative;
     `
+
+export default function FlowerListPage(){
+
+    const [flowers, setFlowers] = useState([]);
+    const [isLoading, setIsLoading] = useState(false);
+    const [errorMessage, setErrorMessage] = useState("");
+    const [selectedFlower, setSelectedFlower] = useState(null);
+
 
     function handleSelect(flower){
         setSelectedFlower(flower)
