@@ -20,6 +20,11 @@ const FlowerGrid = styled.div`
     const Container = styled.div`
         position: relative;
     `
+    const Intro = styled.p`
+        font-weight: 500;
+        font-size: 1.4rem;
+        font-style: italic;
+    `
 
 export default function FlowerListPage(){
 
@@ -44,6 +49,7 @@ export default function FlowerListPage(){
     
     return (
         <Container>
+        <Intro>Click on your favorite flower and discover what it reveals about your personality!!</Intro>
         <FlowerGrid className={selectedFlower ? "dimmed" : ""}>
             {flowers.map((flower) => (
                 <FlowerCard 

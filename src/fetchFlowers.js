@@ -13,7 +13,6 @@ export async function getFlowers() {
             throw new Error(`HTTP error: ${resp.status}`)
         }
         const data = await resp.json();
-        console.log("fetched flowers: ", data.records)
         
         return data.records.map((record)=>({
             id: record.id,

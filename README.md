@@ -1,16 +1,15 @@
-# React + Vite
+# FlowerSense - Discover Your Flower Personality
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Project Description
+FlowerSense is an interactive React application where users can select their favorite flower to discover personality traits associated with it.
+ * Key features:
+     -Responsive flower grid (data fetched from Airtable)
+     - Modal with smooth scroll-into-view behavior
+     - Controlled form where user can provide feedback 
 
-Currently, two official plugins are available:
+# Dependency and Project installation instructions
+  npm create vite@latest . -- --template react
+  npm install
+  npm run dev  (To start the development server)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## React Compiler
-
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+# Data fetched from Airtable

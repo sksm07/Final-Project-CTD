@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import {useRef, useEffect} from "react";
 
 const DetailsContainer = styled.div`
   position: fixed;
@@ -30,9 +31,8 @@ const CloseButton = styled.button`
   background: none;
   border: none;
   font-size: 1.6rem;
-  position: absolute;
-  top: 10px;
-  right: 15px;
+  position: relative;
+  top: 20px;
   cursor: pointer;
   color: #333;
 
@@ -54,11 +54,17 @@ const Text = styled.p`
 `
 
 export default function FlowerDetail({flower, onClose}) {
+  const scrollSection = useRef(null);
+  useEffect(()=> {
+    if (scrollSection.current) {
+      scrollSection.current.scrollIntoView();
+    }}, []);
+
     return (
-        <div>
-            <button onClick={onClose}>
+        <div ref={scrollSection}>
+            <CloseButton onClick={onClose}>
                 X
-            </button>
+            </CloseButton>
             <h2>{flower.name}</h2>
             <img 
                 src={flower.image}
