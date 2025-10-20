@@ -10,6 +10,7 @@ const FlowerGrid = styled.div`
         grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
         gap: 1rem;
         transition: opacity 0.3s ease;
+
         &.dimmed {
             opacity: 0.4;
             pointer-events: none;
