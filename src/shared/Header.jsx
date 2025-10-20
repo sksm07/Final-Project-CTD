@@ -37,6 +37,7 @@ const Brand = styled.h1`
 
   @media (max-width: 425px) {
     font-size: 2rem;
+    }
 `;
 
 const Nav = styled.nav`
