@@ -1,4 +1,4 @@
-import {useState, useEffect} from 'react';
+import {useState, useEffect, useCallback} from 'react';
 import styled from "styled-components";
 import {getFlowers} from '../fetchFlowers';
 import FlowerCard from '../features/FlowerCard.jsx';
@@ -25,6 +25,12 @@ const FlowerGrid = styled.div`
         font-size: 1.4rem;
         font-style: italic;
     `
+    const ErrorMessage = styled.p`
+      color: red;
+      font-weight: bold;
+      text-align: center;
+      margin-top: 1.5rem;
+    `;
 
 export default function FlowerListPage(){
 
@@ -38,18 +44,37 @@ export default function FlowerListPage(){
         setSelectedFlower(flower)
     }
 
-    function handleClose() {
-        setSelectedFlower(null)
+    const handleClose = useCallback(() => {
+        setSelectedFlower(null);
+    }, [])    
+
+    useEffect(()=>{        
+      async function loadFlowers() {
+        setIsLoading(true);
+        setErrorMessage("");
+
+        try {
+          const data = await getFlowers();
+          setFlowers(data);
+        } catch (err) {
+          setErrorMessage("Unable to load flowers. Please try again later.");
+        } finally {
+          setIsLoading(false);
+        }
     }
 
-    useEffect(()=>{
-        getFlowers().then(setFlowers);
+    loadFlowers();        
 
     }, []);
     
     return (
         <Container>
         <Intro>Click on your favorite flower and discover what it reveals about your personality!!</Intro>
+
+        {isLoading && <p>Loading flowers...</p>}
+        {errorMessage && <ErrorMessage>{errorMessage}</ErrorMessage>}
+
+        {!errorMessage && (
         <FlowerGrid className={selectedFlower ? "dimmed" : ""}>
             {flowers.map((flower) => (
                 <FlowerCard 
@@ -59,6 +84,7 @@ export default function FlowerListPage(){
                 />
             )) }
         </FlowerGrid>
+        )}
 
         {selectedFlower && (
             <>

@@ -11,5 +11,6 @@ FlowerSense is an interactive React application where users can select their fav
   npm create vite@latest . -- --template react
   npm install
   npm run dev  (To start the development server)
+  npm install react-router-dom  (For react router)
 
 # Data fetched from Airtable
