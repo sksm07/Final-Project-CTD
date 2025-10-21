@@ -4,6 +4,9 @@ const OverlayBg = styled.div`
     inset: 0;
     z-index: 1000;
     animation: fadeIn 0.3s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
     @keyframes fadeIn {
         from {

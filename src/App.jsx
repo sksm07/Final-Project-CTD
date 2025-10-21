@@ -3,6 +3,7 @@ import ErrorPage from './pages/ErrorPage';
 import FlowerListPage from './pages/FlowerListPage'
 import Header from './shared/Header';
 import Feedback from './pages/Feedback';
+import Footer from "./shared/Footer";
 import {Routes, Route} from "react-router";
 import styled from "styled-components";
 
@@ -25,6 +26,7 @@ function App() {
         <Route path="/feedback" element={<Feedback />}></Route>
         <Route path="*" element={<ErrorPage />}></Route>
       </Routes> 
+      <Footer>© 2025 FlowerSense. All rights reserved.</Footer>
     </AppContainer>
   )
 }
